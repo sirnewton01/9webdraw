@@ -1,10 +1,25 @@
 # 9webdraw
 
 9webdraw is a Web [draw(3)][man3draw] server for Plan 9, using
-the HTML5 <canvas> element.
+the HTML5 <canvas> element. This will allow anyone with a web
+browser to connect to your server and have what resembles a
+draw terminal.
+
+NOTE: This is highly experimental and may not work very well at this stage.
+
+Roadmap:
+
+* Make it work for most built-in applications and rio
+* Stabilize
+* Enhance performance
+* Add some form of authentication (probably just basic)
+* Create a file transfer (in and out) part of the filesystem
+* Add fullscreen mode
+* Add sound
+* Create a protocol for rendering 3D graphics and video
 
 ## Prerequisites
-* [Plan 9][plan9] (or [9front](9front)), of course!
+* [Plan 9][plan9] ( or [9 Front](9front) ), of course!
 * The [Weebsocket][weebsocket] 9P-over-WebSocket bridge.
     + Included in [9atom][9atom]
 * A modern web browser supporting:
@@ -17,8 +32,12 @@ the HTML5 <canvas> element.
     % mk install
 will install the web application to `/usr/web/9wd/`.
 
-[man3draw]: http://plan9.bell-labs.com/magic/man2html/3/draw
-[plan9]: http://plan9.bell-labs.com/plan9/
+Note that on 9front you may need to copy latin1.h from
+the bell labs distribution to your /sys/src/9/port so that
+it will compile.
+
+[man3draw]: https://9p.io/magic/man2html/3/draw
+[plan9]: https://9p.io/plan9/
 [9front]: http://9front.org
 [weebsocket]: https://bitbucket.org/dhoskin/weebsocket/
 [9atom]: http://9atom.org/
