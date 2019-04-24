@@ -1,0 +1,4 @@
+</$objtype/mkfile
+%: %.c
+	$CC $stem.c
+	$LD -o $stem $stem.$O

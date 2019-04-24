@@ -1,0 +1,14 @@
+#!/bin/rc
+
+DIR=web/js
+
+if(test $#* -gt 0){
+	PATTERN=$*(1)
+}
+if not{
+	PATTERN=XXX
+}
+
+FILES=`{du -a $DIR | awk '{print $2}'}
+
+grep -n $PATTERN /dev/null $FILES
