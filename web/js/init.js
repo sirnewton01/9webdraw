@@ -22,7 +22,6 @@ var ninep;
 
 window.onload = function() {
     var wsurl = Socket.wsurl(window.location.toString());
-    //var wsurl = Socket.wsurl("http://wd.9atom.org/9wd.html");
     var webdraw = elem("webdraw");
     var cover = elem("cover");
 

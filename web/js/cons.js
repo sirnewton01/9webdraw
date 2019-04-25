@@ -34,18 +34,12 @@ function Cons() {
             this.buf += String.fromCharCode(0xF020);
         }
         this.flushcallbacks();
-        e.preventDefault();
-        e.stopPropagation();
-        return 0;
     }
 
     this.handlekeys = function(e, dir) {
-        if (!mouse.handlefkeys(e, dir == cons.kbd.down ?
-                mouse.states.down : mouse.states.up)) {
-            e.preventDefault();
-            e.stopPropagation();
-            return 0;
-        }
+        // Let the mouse handler know about keys that it cares about
+        mouse.handlefkeys(e, dir == cons.kbd.down ?
+            mouse.states.down : mouse.states.up);
 
         if (dir == cons.kbd.press) {
             if (compose.getmode()) {

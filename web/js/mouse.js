@@ -4,6 +4,7 @@ function Mouse(cursorelem) {
     var State = function(position, buttons) {
         this.position = position;
         this.buttons = buttons;
+        this.buttonmodifier = 0;
         this.timestamp = Date.now() - basetime;
     }
     State.prototype.copy = function() {
@@ -41,34 +42,35 @@ function Mouse(cursorelem) {
         y: 0
     }, 0);
 
-    this.usefkeys = false;
+    this.usefkeys = true;
     this.callbacks = [];
     this.buf = [];
 
     this.handlefkeys = function(e, state) {
-        if (!this.usefkeys) {
-            return true;
-        }
         switch (e.keyCode) {
-            case 112:
-                this.state.buttons = (this.state.buttons & ~1) | state << 0;
+            case 17:
+                this.state.buttonmodifier = (this.state.buttonmodifier & 0x5) | (state << 1);
                 break;
-            case 113:
-                this.state.buttons = (this.state.buttons & ~2) | state << 1;
+            case 91:
+            case 224:
+                this.state.buttonmodifier = (this.state.buttonmodifier & 0x3) | (state << 2);
                 break;
-            case 114:
-                this.state.buttons = (this.state.buttons & ~4) | state << 2;
-                break;
-            default:
-                return true;
         }
-        this.generatemovement(this.state);
-        return false;
+
+        if (!this.state.buttonmodifier) {
+            this.state.buttonmodifier = 0x1;
+        } else {
+            this.state.buttonmodifier = (this.state.buttonmodifier & 0x6)
+        }
     }
 
     this.handlebutton = function(e, state) {
-        this.state.buttons = (this.state.buttons & ~(1 << e.button)) |
-            state << e.button;
+        if (state) {
+            this.state.buttons = this.state.buttonmodifier;
+        } else {
+            this.state.buttons = 0;
+        }
+
         this.generatemovement(this.state);
 
         e.preventDefault();

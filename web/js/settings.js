@@ -1,6 +1,6 @@
 function Settings() {
 
-    this.settings = ["mousefkeys"];
+    this.settings = [];
 
     this.addsetting = function(setting) {
         setevent(elem(setting), "click", function() {
@@ -12,7 +12,7 @@ function Settings() {
 
         switch (name) {
             case "mousefkeys":
-                mouse.usefkeys = value;
+                //mouse.usefkeys = value;
                 return false;
             default:
                 return true;
