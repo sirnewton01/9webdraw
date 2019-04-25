@@ -1,49 +1,51 @@
 /*
 	riobg: #9cefef
 	riofg: #52aaad
-*/.image {
-     border: 1px solid black;
+*/
+.image {
+    border: 1px solid black;
 }
 
 #container {
-	position: relative;
+    position: relative;
 }
 
 #webdraw {
-	border-width: medium;
-	border-style: solid;
-	border-color: #9cefef;
+    border-width: medium;
+    border-style: solid;
+    border-color: #9cefef;
 }
 
 #cursor {
-	position: absolute;
-	top: 0em;
-	left: 0em;
-	z-index: 9000;
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    z-index: 9000;
 }
 
 #cover {
-	position: absolute;
-	top: 0em;
-	left: 0em;
-	z-index: 9001;
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    z-index: 9001;
 }
 
 #cons {
-	border-style: solid;
-	border-color: #52aaad;
-	width: 80em;
-	height: 25em;
-	overflow-y: scroll; /* XXX non-standard! */
-	font-family: monospace;
+    border-style: solid;
+    border-color: #52aaad;
+    width: 80em;
+    height: 25em;
+    overflow-y: scroll;
+    /* XXX non-standard! */
+    font-family: monospace;
 }
 
 #cons span {
-	float: left;
-	clear: left;
+    float: left;
+    clear: left;
 }
 
-#settings label{
-	float: left;
-	clear: left;
+#settings label {
+    float: left;
+    clear: left;
 }

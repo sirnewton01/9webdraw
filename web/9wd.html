@@ -1,53 +1,56 @@
 <html>
-	<head>
-		<title>9webdraw</title>
-        <style>
+
+<head>
+    <title>9webdraw</title>
+    <style>
         /* Change this style to block to show the hidden images. */
         .image {
-           display: none;
+            display: none;
         }
-        </style>
-		<link rel="stylesheet" href="css/9wd.css">
-		<script type="text/javascript" charset="utf-8" src="js/init.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/composetab.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/compose.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/cons.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/mouse.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/settings.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/util/array.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/util/pad.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/util/twoscmpl.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/lib9p/utf8.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/lib9p/socket.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/lib9p/lib9p.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/lib9p/fid.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/lib9p/qid.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/lib9p/stat.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/lib9p/log.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/pointrect.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/memlayer.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/draw9p.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/new.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/ctl.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/data.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/refresh.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/image.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/chan.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/cmap.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/alpha.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/memdraw.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/load.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/draw/screen.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/test/draw.js"></script>
-	</head>
-	<body>
-		<div id="container">
-			<canvas width="16" height="16" id="cursor">cursor</canvas>
-			<canvas width="1200" height="400" id="webdraw">/dev/draw</canvas>
-			<canvas width="1200" height="400" id="cover">cover</canvas>
-		</div>
-		<fieldset id="settings">
-			<label>F-key mouse buttons<input type="checkbox" id="mousefkeys"></label>
-		</fieldset>
-	</body>
+    </style>
+    <link rel="stylesheet" href="css/9wd.css">
+    <script type="text/javascript" charset="utf-8" src="js/init.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/composetab.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/compose.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/cons.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/mouse.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/settings.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/util/array.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/util/pad.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/util/twoscmpl.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib9p/utf8.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib9p/socket.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib9p/lib9p.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib9p/fid.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib9p/qid.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib9p/stat.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/lib9p/log.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/pointrect.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/memlayer.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/draw9p.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/new.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/ctl.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/data.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/refresh.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/image.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/chan.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/cmap.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/alpha.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/memdraw.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/load.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/draw/screen.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/test/draw.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <canvas width="16" height="16" id="cursor">cursor</canvas>
+        <canvas width="1200" height="400" id="webdraw">/dev/draw</canvas>
+        <canvas width="1200" height="400" id="cover">cover</canvas>
+    </div>
+    <fieldset id="settings">
+        <label>F-key mouse buttons<input type="checkbox" id="mousefkeys"></label>
+    </fieldset>
+</body>
+
 </html>
